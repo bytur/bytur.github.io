@@ -6,36 +6,45 @@
   <title>Ring Op</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('https://i.ibb.co/8g5DqvJ/background-image.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  background-repeat: no-repeat;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://i.ibb.co/8g5DqvJ/background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      background-repeat: no-repeat;
+      font-family: 'Arial', sans-serif;
+    }
 
-/* Resten af din eksisterende CSS-stil her */
-.phone-container {
-  text-align: center;
-  animation: fadeInUp 1s ease-in-out;
-}
-
-/* Resten af din eksisterende CSS-stil her */
+    .phone-container {
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+    }
 
     .phone-number {
       font-size: 48px;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
+
     .btn {
       font-size: 24px;
       padding: 10px 30px;
+      background-color: #ffcc00;
+      border-color: #ffcc00;
+      transition: all 0.3s ease;
     }
+
+    .btn:hover {
+      background-color: #e6b800;
+      border-color: #e6b800;
+    }
+
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -46,11 +55,11 @@ body {
         transform: translateY(0);
       }
     }
-    
   </style>
 </head>
 <body>
   <div class="phone-container">
+    <h1>Ring Op</h1>
     <div class="phone-number">+45 1234 5678</div>
     <a href="tel:+4512345678" class="btn btn-primary">Ring Nu</a>
   </div>
