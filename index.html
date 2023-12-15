@@ -13,23 +13,19 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-image: url('https://i.ibb.co/8g5DqvJ/background-image.jpg');
-      background-size: cover;
-      background-position: center;
+      background-color: #000;
       color: #fff;
-      background-repeat: no-repeat;
       font-family: 'Arial', sans-serif;
+      text-align: center;
     }
 
     .phone-container {
-      text-align: center;
       animation: fadeInUp 1s ease-in-out;
     }
 
     .phone-number {
       font-size: 48px;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
     .btn {
@@ -43,6 +39,20 @@
     .btn:hover {
       background-color: #e6b800;
       border-color: #e6b800;
+    }
+
+    .dot {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      background-color: red; /* Lukket farve */
+      vertical-align: middle;
+    }
+
+    .open {
+      background-color: green; /* Åben farve */
     }
 
     @keyframes fadeInUp {
@@ -61,8 +71,25 @@
   <div class="phone-container">
     <h1>Ring Op</h1>
     <div class="phone-number">+45 1234 5678</div>
+    <div>
+      <span>Åbningstider:</span>
+      <div class="dot" id="status-dot"></div>
+      <span>09.00 - 00.00 alle dage</span>
+    </div>
     <a href="tel:+4512345678" class="btn btn-primary">Ring Nu</a>
   </div>
+
+  <script>
+    // Tilpasning af åbningstidens prik baseret på tidspunktet på dagen
+    const now = new Date();
+    const currentHour = now.getHours();
+
+    const dot = document.getElementById('status-dot');
+
+    if (currentHour >= 9 && currentHour < 24) {
+      dot.classList.add('open');
+    }
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
